@@ -8,6 +8,7 @@ namespace TrabajoFinal {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Media;
 
 	public ref class FrmPrincipal : public System::Windows::Forms::Form
 	{
@@ -25,13 +26,18 @@ namespace TrabajoFinal {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Timer^ timer1;
+	protected:
+	private: System::ComponentModel::IContainer^ components;
 
 	private:
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
+			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->SuspendLayout();
 			// 
 			// FrmPrincipal

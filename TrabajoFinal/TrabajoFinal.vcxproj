@@ -123,6 +123,7 @@
     <ClCompile Include="FrmPrincipal.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Character.h" />
     <ClInclude Include="FrmPrincipal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
