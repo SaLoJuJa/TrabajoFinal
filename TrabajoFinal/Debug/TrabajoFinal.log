@@ -1,5 +1,5 @@
 ﻿  FrmPrincipal.cpp
-  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
-  Generando código...
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Character.h(33,56): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Character.h(33,42): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
   FrmPrincipal.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   TrabajoFinal.vcxproj -> C:\Users\salo_\Desktop\TrabajoFinal\Debug\TrabajoFinal.exe

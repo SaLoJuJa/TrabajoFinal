@@ -5,11 +5,13 @@ using namespace System::Drawing;
 class Character
 {
 public:
-	Character() {}
+	Character(int width, int height) 
+	{
+		this->width = width;
+		this->height = height;
+		idx = idy = 0;
+	}
 	~Character() {}
-
-	virtual void move() {}
-	virtual void draw() {}
 
 	int getX() { return x; }
 	int getY() { return y; }
@@ -25,9 +27,17 @@ public:
 	void setWidth(int n) { width = n; }
 	void setHeight(int n) { height = n; }
 
+	void draw(Graphics^ g, Bitmap^ bmp)
+	{
+		Rectangle sectionShown = Rectangle(idx * width, idy * height, width, height);
+		Rectangle zoom = Rectangle(x, y, width * 1.2, height * 1.2);
+		g->DrawImage(bmp, zoom, sectionShown, GraphicsUnit::Pixel);
+	}
+	virtual void move(){}
+
 protected:
 	int x, y; //coordenadas de personaje
 	int dx, dy; //velocidad de movimiento
 	int width, height; //ancho y alto de figura
-
+	int idx, idy; //indice de las imagenes
 };
