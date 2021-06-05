@@ -1,0 +1,3 @@
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Debug\TrabajoFinal.vcxproj.AssemblyReference.cache
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Debug\TrabajoFinal.FrmPrincipal.resources
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Debug\TrabajoFinal.vcxproj.GenerateResource.cache
