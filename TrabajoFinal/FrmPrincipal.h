@@ -25,9 +25,10 @@ namespace TrabajoFinal {
 			//Bitmaps
 			bmpMap = gcnew Bitmap("worldOne.jpg");
 			bmpLeader = gcnew Bitmap("leaderMale.png");
+			bmpAgent = gcnew Bitmap("agent.png");
 
 			//Controller
-			controller = new Controller(bmpLeader);
+			controller = new Controller(bmpLeader, bmpAgent);
 		}
 
 	private:
@@ -39,6 +40,7 @@ namespace TrabajoFinal {
 		//Bitmaps
 		Bitmap^ bmpMap;
 		Bitmap^ bmpLeader;
+		Bitmap^ bmpAgent;
 	private: System::Windows::Forms::Panel^ panel1;
 
 		//Controller
@@ -93,10 +95,10 @@ namespace TrabajoFinal {
 		//Clear
 		buffer->Graphics->Clear(Color::WhiteSmoke);
 		//Move
-		
+		controller->moveEverything(buffer->Graphics);
 		//Draw
 		buffer->Graphics->DrawImage(bmpMap, 0, 0, panel1->Width, panel1->Height);
-		controller->drawEverything(buffer->Graphics, bmpLeader);
+		controller->drawEverything(buffer->Graphics, bmpLeader, bmpAgent);
 		//Render
 		buffer->Render(g);
 	}
