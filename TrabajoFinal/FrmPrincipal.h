@@ -25,7 +25,7 @@ namespace TrabajoFinal {
 			//Bitmaps
 			bmpMap = gcnew Bitmap("worldOne.jpg");
 			bmpLeader = gcnew Bitmap("leaderMale.png");
-			bmpAgent = gcnew Bitmap("agent.png");
+			bmpAgent = gcnew Bitmap("allyOne.png");
 
 			//Controller
 			controller = new Controller(bmpLeader, bmpAgent);
@@ -90,6 +90,7 @@ namespace TrabajoFinal {
 
 		}
 #pragma endregion
+
 	private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) 
 	{
 		//Clear

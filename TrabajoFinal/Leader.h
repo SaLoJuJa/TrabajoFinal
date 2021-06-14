@@ -8,7 +8,7 @@ class Leader : public Character
 public:
 	Leader(int width,int height) : Character(width,height)
 	{
-		dx = dy = 10;
+		dx = dy = 5;
 		x = y = 70;
 	}
 	~Leader() {}
@@ -52,4 +52,6 @@ public:
 			idx = 0;
 		}
 	}
+private:
+	int health;
 };

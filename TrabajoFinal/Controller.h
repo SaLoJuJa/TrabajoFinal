@@ -1,6 +1,6 @@
 #pragma once
 #include "Leader.h"
-#include "Agent.h"
+#include "Ally.h"
 #include <vector>
 
 using namespace std;
@@ -8,32 +8,31 @@ using namespace std;
 class Controller
 {
 public:
-	Controller(Bitmap^ bmpLeader, Bitmap^ bmpAgent) 
+	Controller(Bitmap^ bmpLeader, Bitmap^ bmpAlly) 
 	{
 		leader = new Leader(bmpLeader->Width / 3, bmpLeader->Height / 4);
-		for (int i = 0; i < 2; i++)
+		for (int i = 0; i < 1; i++)
 		{
-			agent.push_back(new Agent(bmpAgent->Width / 3, bmpAgent->Height / 4, 0));
-			agent.push_back(new Agent(bmpAgent->Width / 3, bmpAgent->Height / 4, 1));
+			ally.push_back(new Ally(bmpAlly->Width / 3, bmpAlly->Height / 4, 0));
+			ally.push_back(new Ally(bmpAlly->Width / 3, bmpAlly->Height / 4, 1));
 		}
-		agent.push_back(new Agent(bmpAgent->Width / 3, bmpAgent->Height / 4, 2));
 	}
 	~Controller(){}
 
-	void drawEverything(Graphics^ g,Bitmap^ bmpLeader, Bitmap^ bmpAgent)
+	void drawEverything(Graphics^ g,Bitmap^ bmpLeader, Bitmap^ bmpAlly)
 	{
-		for (int i = 0; i < agent.size(); i++)
+		for (int i = 0; i < ally.size(); i++)
 		{
-			agent[i]->draw(g, bmpAgent);
+			ally[i]->draw(g, bmpAlly);
 		}
 		leader->draw(g, bmpLeader);
 	}
 
 	void moveEverything(Graphics^ g)
 	{
-		for (int i = 0; i < agent.size(); i++)
+		for (int i = 0; i < ally.size(); i++)
 		{
-			agent[i]->move(g, leader);
+			ally[i]->move(g, leader);
 		}
 	}
 
@@ -41,5 +40,5 @@ public:
 
 private:
 	Leader* leader;
-	vector<Agent*>agent;
+	vector<Ally*> ally;
 };
