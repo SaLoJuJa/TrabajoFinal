@@ -25,10 +25,11 @@ namespace TrabajoFinal {
 			//Bitmaps
 			bmpMap = gcnew Bitmap("worldOne.jpg");
 			bmpLeader = gcnew Bitmap("leaderMale.png");
-			bmpAgent = gcnew Bitmap("allyOne.png");
+			bmpAlly = gcnew Bitmap("allyOne.png");
+			bmpAgent = gcnew Bitmap("agent.png");
 
 			//Controller
-			controller = new Controller(bmpLeader, bmpAgent);
+			controller = new Controller(bmpLeader, bmpAlly,bmpAgent);
 		}
 
 	private:
@@ -40,6 +41,7 @@ namespace TrabajoFinal {
 		//Bitmaps
 		Bitmap^ bmpMap;
 		Bitmap^ bmpLeader;
+		Bitmap^ bmpAlly;
 		Bitmap^ bmpAgent;
 	
 		//Controller
@@ -101,7 +103,7 @@ namespace TrabajoFinal {
 		controller->moveEverything(buffer->Graphics);
 		//Draw
 		buffer->Graphics->DrawImage(bmpMap, 0, 0, panel1->Width, panel1->Height);
-		controller->drawEverything(buffer->Graphics, bmpLeader, bmpAgent);
+		controller->drawEverything(buffer->Graphics, bmpLeader, bmpAlly,bmpAgent);
 		//Render
 		buffer->Render(g);
 	}
@@ -119,7 +121,7 @@ namespace TrabajoFinal {
 		case Keys::S: case Keys::Down:
 			controller->getLeader()->move(buffer->Graphics, 'S'); break;
 		case Keys::Space:
-			controller->addAlly((char)Keys::Space, bmpAgent);
+			controller->addAlly((char)Keys::Space, bmpAlly,bmpAgent);
 			break;
 		}
 	}

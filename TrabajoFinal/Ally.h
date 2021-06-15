@@ -1,11 +1,10 @@
 ﻿#pragma once
 #include "Character.h"
-#include "Leader.h"
 
 class Ally : public Character
 {
 private:
-	int ind; //movimiento del enemigo
+	int ind; //movimiento del aliado
 public:
 	Ally(int width, int height, int ind) : Character(width, height)
 	{
@@ -16,7 +15,7 @@ public:
 	}
 	~Ally(){}
 
-	void move(Graphics^ g, Leader* leader)
+	void move(Graphics^ g)
 	{
 		switch (ind)
 		{
@@ -35,7 +34,7 @@ public:
 		case 2:	//Vertical
 			if (y + height * 1.2 > g->VisibleClipBounds.Height || y < 0) //Rebote
 				dy *= -1;
-			if (dx > 0)
+			if (dy > 0)
 			{
 				idy = 0;
 			}
