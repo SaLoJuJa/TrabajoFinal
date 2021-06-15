@@ -11,13 +11,14 @@ public:
 	Controller(Bitmap^ bmpLeader, Bitmap^ bmpAlly) 
 	{
 		leader = new Leader(bmpLeader->Width / 3, bmpLeader->Height / 4);
-		for (int i = 0; i < 1; i++)
-		{
-			ally.push_back(new Ally(bmpAlly->Width / 3, bmpAlly->Height / 4, 0));
-			ally.push_back(new Ally(bmpAlly->Width / 3, bmpAlly->Height / 4, 1));
-		}
 	}
 	~Controller(){}
+
+	void addAlly(char i,Bitmap^ bmpAlly)
+	{
+		if (i == 32)
+			ally.push_back(new Ally(bmpAlly->Width / 3, bmpAlly->Height / 4, rand() % 3 * 1));
+	}
 
 	void drawEverything(Graphics^ g,Bitmap^ bmpLeader, Bitmap^ bmpAlly)
 	{

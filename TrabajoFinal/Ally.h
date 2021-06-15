@@ -20,7 +20,7 @@ public:
 	{
 		switch (ind)
 		{
-		case 0: //Horizontal
+		case 1: //Horizontal
 			if (x + width * 1.2 > g->VisibleClipBounds.Width || x < 0) dx *= -1; //Rebote
 			if (dx > 0)
 			{
@@ -32,7 +32,7 @@ public:
 			}
 			x += dx;
 			break;
-		case 1:	//Vertical
+		case 2:	//Vertical
 			if (y + height * 1.2 > g->VisibleClipBounds.Height || y < 0) //Rebote
 				dy *= -1;
 			if (dx > 0)

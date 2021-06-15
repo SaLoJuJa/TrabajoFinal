@@ -41,8 +41,7 @@ namespace TrabajoFinal {
 		Bitmap^ bmpMap;
 		Bitmap^ bmpLeader;
 		Bitmap^ bmpAgent;
-	private: System::Windows::Forms::Panel^ panel1;
-
+	
 		//Controller
 		Controller* controller;
 
@@ -55,8 +54,11 @@ namespace TrabajoFinal {
 			}
 		}
 	private: System::Windows::Forms::Timer^ timer1;
-	protected:
+	private: System::Windows::Forms::Panel^ panel1;
 	private: System::ComponentModel::IContainer^ components;
+
+	protected:
+
 #pragma region Windows Form Designer generated code
 		void InitializeComponent(void)
 		{
@@ -103,6 +105,7 @@ namespace TrabajoFinal {
 		//Render
 		buffer->Render(g);
 	}
+
 	private: System::Void FrmPrincipal_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
 	{
 		switch (e->KeyCode)
@@ -115,6 +118,9 @@ namespace TrabajoFinal {
 			controller->getLeader()->move(buffer->Graphics, 'W'); break;
 		case Keys::S: case Keys::Down:
 			controller->getLeader()->move(buffer->Graphics, 'S'); break;
+		case Keys::Space:
+			controller->addAlly((char)Keys::Space, bmpAgent);
+			break;
 		}
 	}
 	};
