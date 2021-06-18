@@ -120,6 +120,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FrmMenu.cpp" />
     <ClCompile Include="FrmPrincipal.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -127,12 +128,18 @@
     <ClInclude Include="Ally.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="Controller.h" />
+    <ClInclude Include="FrmMenu.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="FrmPrincipal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Leader.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrmMenu.resx">
+      <DependentUpon>FrmMenu.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.h</DependentUpon>
     </EmbeddedResource>

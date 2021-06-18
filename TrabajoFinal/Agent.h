@@ -8,7 +8,7 @@ public:
 	Agent(int width, int height, int ind) : Character(width,height) 
 	{
 		this->ind = ind;
-		dx = dy = 1;
+		dx = dy = 2;
 		x = rand() % 60 * 10;
 		y = rand() % 30 * 10;
 	}

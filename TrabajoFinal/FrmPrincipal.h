@@ -29,7 +29,7 @@ namespace TrabajoFinal {
 			bmpAgent = gcnew Bitmap("agent.png");
 
 			//Controller
-			controller = new Controller(bmpLeader, bmpAlly,bmpAgent);
+			controller = new Controller(bmpLeader, bmpAlly, bmpAgent);
 		}
 
 	private:
@@ -65,6 +65,7 @@ namespace TrabajoFinal {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(FrmPrincipal::typeid));
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->SuspendLayout();
@@ -78,17 +79,18 @@ namespace TrabajoFinal {
 			// 
 			this->panel1->Location = System::Drawing::Point(1, 3);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(765, 598);
+			this->panel1->Size = System::Drawing::Size(893, 662);
 			this->panel1->TabIndex = 0;
 			// 
 			// FrmPrincipal
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(767, 603);
+			this->ClientSize = System::Drawing::Size(894, 667);
 			this->Controls->Add(this->panel1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"FrmPrincipal";
-			this->Text = L"FrmPrincipal";
+			this->Text = L"Buggisoft";
 			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &FrmPrincipal::FrmPrincipal_KeyDown);
 			this->ResumeLayout(false);
 
@@ -121,8 +123,7 @@ namespace TrabajoFinal {
 		case Keys::S: case Keys::Down:
 			controller->getLeader()->move(buffer->Graphics, 'S'); break;
 		case Keys::Space:
-			controller->addAlly((char)Keys::Space, bmpAlly,bmpAgent);
-			break;
+			controller->addAlly((char)Keys::Space, bmpAlly,bmpAgent); break;
 		}
 	}
 	};

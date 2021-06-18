@@ -12,7 +12,6 @@ public:
 	Controller(Bitmap^ bmpLeader, Bitmap^ bmpAlly,Bitmap^ bmpAgent) 
 	{
 		leader = new Leader(bmpLeader->Width / 3, bmpLeader->Height / 4);
-		
 	}
 	~Controller(){}
 
@@ -22,8 +21,7 @@ public:
 		{
 			ally.push_back(new Ally(bmpAlly->Width / 3, bmpAlly->Height / 4, rand() % 3 * 1));
 			agent.push_back(new Agent(bmpAgent->Width / 3, bmpAgent->Height / 4, 0));
-		}
-		
+		}		
 	}
 
 	void drawEverything(Graphics^ g,Bitmap^ bmpLeader, Bitmap^ bmpAlly,Bitmap^ bmpAgent)
