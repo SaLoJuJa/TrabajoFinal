@@ -1,7 +1,0 @@
-D:\PROGRAMACIÓN II\Trabajo final\TrabajoFinal\Debug\TrabajoFinal.vcxprojAssemblyReference.cache
-D:\PROGRAMACIÓN II\Trabajo final\TrabajoFinal\Debug\TrabajoFinal.FrmPrincipal.resources
-D:\PROGRAMACIÓN II\Trabajo final\TrabajoFinal\Debug\TrabajoFinal.vcxproj.GenerateResource.cache
-C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Debug\TrabajoFinal.vcxproj.AssemblyReference.cache
-C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Debug\TrabajoFinal.FrmMenu.resources
-C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Debug\TrabajoFinal.FrmPrincipal.resources
-C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Debug\TrabajoFinal.vcxproj.GenerateResource.cache
