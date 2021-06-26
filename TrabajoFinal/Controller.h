@@ -61,7 +61,7 @@ public:
 	{
 		for each (Ally * a in ally)
 		{
-			a->move(g);
+			a->move(g,getObstacles());
 		}
 		for (int i = 0; i < nAgents; i++)
 		{

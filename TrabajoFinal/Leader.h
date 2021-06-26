@@ -97,12 +97,12 @@ public:
 			}
 
 			if (indexRec != -1) {
-				if (y + height * 1.0 < g->VisibleClipBounds.Height && !this->getRectangle(x, y + dy).IntersectsWith(obstacles[indexRec]->getRectangle())) {
+				if (y + height * 1.2 < g->VisibleClipBounds.Height && !this->getRectangle(x, y + dy).IntersectsWith(obstacles[indexRec]->getRectangle())) {
 					y += dy;
 				}
 			}
 			else {
-				if (y + height * 1.0 < g->VisibleClipBounds.Height) {
+				if (y + height * 1.2 < g->VisibleClipBounds.Height) {
 					y += dy;
 				}
 			}

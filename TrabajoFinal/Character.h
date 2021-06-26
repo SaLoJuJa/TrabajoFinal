@@ -30,11 +30,11 @@ public:
 
 	void draw(Graphics^ g, Bitmap^ bmp)
 	{
-		Pen^ p = gcnew Pen(Color::Blue, 3);
+		//Pen^ p = gcnew Pen(Color::Blue, 3);
 		Rectangle sectionShown = Rectangle(idx * width, idy * height, width, height);
 		Rectangle zoom = Rectangle(x, y, width * 1.2, height * 1.2);
 		g->DrawImage(bmp, zoom, sectionShown, GraphicsUnit::Pixel);
-		g->DrawRectangle(p, zoom);
+		//g->DrawRectangle(p, zoom);
 	}
 	virtual void move(){}
 
