@@ -27,9 +27,10 @@ namespace TrabajoFinal {
 			bmpLeader = gcnew Bitmap("leaderMale.png");
 			bmpAlly = gcnew Bitmap("allyOne.png");
 			bmpAgent = gcnew Bitmap("agent.png");
+			bmpHabitantOne = gcnew Bitmap("habitantOne.png");
 
 			//Controller
-			controller = new Controller(bmpLeader, bmpAlly, bmpAgent, time,
+			controller = new Controller(bmpLeader, bmpAlly, bmpAgent, bmpHabitantOne, time,
 				nAgents, nAllys, nHabitants);
 
 			//Sound
@@ -47,9 +48,11 @@ namespace TrabajoFinal {
 		Bitmap^ bmpLeader;
 		Bitmap^ bmpAlly;
 		Bitmap^ bmpAgent;
+		Bitmap^ bmpHabitantOne;
 	
 		//Controller
-		Controller* controller;	  
+		Controller* controller;	 
+
 	private: System::Windows::Forms::Timer^ timer2;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ lblTime;
@@ -205,7 +208,7 @@ namespace TrabajoFinal {
 		controller->moveEverything(buffer->Graphics);
 		//Draw
 		buffer->Graphics->DrawImage(bmpMap, 0, 0, panel1->Width, panel1->Height);
-		controller->drawEverything(buffer->Graphics, bmpLeader, bmpAlly,bmpAgent);
+		controller->drawEverything(buffer->Graphics, bmpLeader, bmpAlly,bmpAgent,bmpHabitantOne);
 		lblTime->Text = "" + controller->getTime();
 		//Render
 		buffer->Render(g);
@@ -216,13 +219,13 @@ namespace TrabajoFinal {
 		switch (e->KeyCode)
 		{
 		case Keys::A: case Keys::Left:
-			controller->getLeader()->move(buffer->Graphics, 'A',controller->getObstacles()); break;
+			controller->getLeader()->move(buffer->Graphics, 'A'); break;
 		case Keys::D: case Keys::Right:
-			controller->getLeader()->move(buffer->Graphics, 'D',controller->getObstacles()); break;
+			controller->getLeader()->move(buffer->Graphics, 'D'); break;
 		case Keys::W: case Keys::Up:						   
-			controller->getLeader()->move(buffer->Graphics, 'W',controller->getObstacles()); break;
+			controller->getLeader()->move(buffer->Graphics, 'W'); break;
 		case Keys::S: case Keys::Down:						   
-			controller->getLeader()->move(buffer->Graphics, 'S',controller->getObstacles()); break;
+			controller->getLeader()->move(buffer->Graphics, 'S'); break;
 		case Keys::Space:
 			break;
 		default:

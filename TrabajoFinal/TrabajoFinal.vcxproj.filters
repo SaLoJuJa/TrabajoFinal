@@ -44,7 +44,7 @@
     <ClInclude Include="FrmMenu.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Obstacle.h">
+    <ClInclude Include="Habitant.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

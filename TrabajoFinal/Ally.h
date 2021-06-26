@@ -1,6 +1,5 @@
 ﻿#pragma once
 #include "Character.h"
-#include "Obstacle.h"
 #include <vector>
 
 using namespace std;
@@ -20,24 +19,11 @@ public:
 	}
 	~Ally(){}
 
-	Rectangle getRectangle(int x, int y)
-	{
-		return Rectangle(x, y, width * 1.1, height * 1.2);
-	}
-
-	void move(Graphics^ g, vector<Obstacle*> obstacles)
+	void move(Graphics^ g)
 	{
 		switch (ind)
 		{
 		case 1: //Horizontal
-			for (int i = 0; i < obstacles.size(); i++)
-			{
-				if (this->getRectangle(x - dx, y).IntersectsWith(obstacles[i]->getRectangle())) 
-				{
-					indexRec = i;
-					break;
-				}
-			}
 
 			if (x + width * 1.2 > g->VisibleClipBounds.Width || x < 0) dx *= -1; //Rebote
 			if (dx > 0)

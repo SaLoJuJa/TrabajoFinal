@@ -134,8 +134,8 @@
     <ClInclude Include="FrmPrincipal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Habitant.h" />
     <ClInclude Include="Leader.h" />
-    <ClInclude Include="Obstacle.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FrmMenu.resx">

@@ -2,6 +2,7 @@
 #include "Leader.h"
 #include "Ally.h"
 #include "Agent.h"
+#include "Habitant.h"
 #include <vector>
 
 using namespace std;
@@ -9,7 +10,7 @@ using namespace std;
 class Controller
 {
 public:
-	Controller(Bitmap^ bmpLeader, Bitmap^ bmpAlly,Bitmap^ bmpAgent, 
+	Controller(Bitmap^ bmpLeader, Bitmap^ bmpAlly,Bitmap^ bmpAgent,Bitmap^ bmpHabitant, 
 		int time, int nAgents, int nAllys, int nHabitants)
 	{
 		this->nAgents = nAgents;
@@ -25,26 +26,12 @@ public:
 		for (int i = 0; i < nAgents; i++)
 			agent.push_back(new Agent(bmpAgent->Width / 3, bmpAgent->Height / 4, 0));
 
-		//paredes
-		obstacles.push_back(new Obstacle(135, 100, 15, 363));
-		obstacles.push_back(new Obstacle(153, 264, 675, 15));
-		obstacles.push_back(new Obstacle(828, 100, 15, 363));
-		obstacles.push_back(new Obstacle(154, 100, 117, 15));
-		obstacles.push_back(new Obstacle(423, 17, 15, 165));
-		obstacles.push_back(new Obstacle(610, 100, 15, 165));
-		obstacles.push_back(new Obstacle(152, 447, 185, 15));
-		obstacles.push_back(new Obstacle(422, 447, 220, 15));
-		obstacles.push_back(new Obstacle(323, 465, 15, 110));
-		obstacles.push_back(new Obstacle(625, 465, 15, 110));
-		//bordes del mapa
-		obstacles.push_back(new Obstacle(18, 15, 1048, 1));
-		obstacles.push_back(new Obstacle(15, 575, 1048, 1));
-		obstacles.push_back(new Obstacle(1065, 15, 1, 561));
-		obstacles.push_back(new Obstacle(18, 15, 1, 561));
+		for (int i = 0; i < nHabitants; i++)
+			habitants.push_back(new Habitant(bmpHabitant->Width / 3, bmpHabitant->Height / 4, rand() % 3 * 1));
 	}
 	~Controller(){}
 
-	void drawEverything(Graphics^ g,Bitmap^ bmpLeader, Bitmap^ bmpAlly,Bitmap^ bmpAgent)
+	void drawEverything(Graphics^ g,Bitmap^ bmpLeader, Bitmap^ bmpAlly,Bitmap^ bmpAgent,Bitmap^ bmpHabitant)
 	{
 		for each (Ally * a in ally)
 		{
@@ -54,6 +41,10 @@ public:
 		{
 			a->draw(g, bmpAgent);
 		}
+		for each (Habitant * a in habitants)
+		{
+			a->draw(g, bmpHabitant);
+		}
 		leader->draw(g, bmpLeader);
 	}
 
@@ -61,11 +52,15 @@ public:
 	{
 		for each (Ally * a in ally)
 		{
-			a->move(g,getObstacles());
+			a->move(g);
 		}
 		for (int i = 0; i < nAgents; i++)
 		{
 			agent[i]->move(g, ally[i]);
+		}
+		for each (Habitant * a in habitants)
+		{
+			a->move(g);
 		}
 			
 	}
@@ -73,12 +68,12 @@ public:
 	Leader* getLeader() { return leader; }
 	int getTime() { return time; }
 	void decreaseTime() { time--; }
-	vector<Obstacle*> getObstacles() { return obstacles; }
+
 
 private:
 	Leader* leader;
 	vector<Agent*> agent;
 	vector<Ally*> ally;
-	vector<Obstacle*> obstacles;
+	vector<Habitant*> habitants;
 	int time, nAgents, nAllys, nHabitants;
 };

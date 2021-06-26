@@ -1,6 +1,5 @@
 #pragma once
 #include "Character.h"
-#include "Obstacle.h"
 #include <vector>
 
 using namespace std;
@@ -15,96 +14,34 @@ public:
 		x = y = 70;
 	}
 	~Leader() {}
-
-	Rectangle getRectangle(int x, int y)
-	{
-		return Rectangle(x, y, width * 1.2, height * 1.2);
-	}
 	
-	void move(Graphics^ g, char i, vector<Obstacle*> obstacles) 
+	void move(Graphics^ g, char i) 
 	{
 		switch (i)
 		{
 		case 'A':
-			idy = 1;
-			for (int i = 0; i < obstacles.size(); i++) {
-				if (this->getRectangle(x - dx, y).IntersectsWith(obstacles[i]->getRectangle())) {
-					indexRec = i;
-					break;
-				}
-			}
-
-			if (indexRec != -1) {
-				if (x > 0 && !this->getRectangle(x - dx, y).IntersectsWith(obstacles[indexRec]->getRectangle())) {
-					x -= dx;
-				}
-			}
-
-			else {
-				if (x > 0) {
-					x -= dx;
-				}
+			if (x > 0) {
+				x -= dx;
+				idy = 1;
 			}
 			break;
 		case 'D':
-			idy = 2;
-			for (int i = 0; i < obstacles.size(); i++) {
-				if (this->getRectangle(x + dx, y).IntersectsWith(obstacles[i]->getRectangle())) {
-					indexRec = i;
-					break;
-				}
-			}
-
-			if (indexRec != -1) {
-				if (x + width * 1.2 < g->VisibleClipBounds.Width && !this->getRectangle(x + dx, y).IntersectsWith(obstacles[indexRec]->getRectangle())) {
-					x += dx;
-				}
-			}
-			else {
-				if (x + width * 1.2 < g->VisibleClipBounds.Width) {
-					x += dx;
-				}
+			if (x + width * 1.0 < g->VisibleClipBounds.Width) {
+				x += dx;
+				idy = 2;
 			}
 			break;
 		case 'W':
-			idy = 3;
-			for (int i = 0; i < obstacles.size(); i++) {
-				if (this->getRectangle(x, y - dy).IntersectsWith(obstacles[i]->getRectangle())) {
-					indexRec = i;
-					break;
-				}
-			}
-
-			if (indexRec != -1) {
-				if (y > 0 && !this->getRectangle(x, y - dy).IntersectsWith(obstacles[indexRec]->getRectangle())) {
-					y -= dy;
-				}
-			}
-			else {
-				if (y > 0) {
-					y -= dy;
-				}
+			if (y > 0) {
+				y -= dy;
+				idy = 3;
 			}
 			break;
 
 		case 'S':
-			idy = 0;
-			for (int i = 0; i < obstacles.size(); i++) {
-				if (this->getRectangle(x, y + dy).IntersectsWith(obstacles[i]->getRectangle())) {
-					indexRec = i;
-					break;
-				}
-			}
-
-			if (indexRec != -1) {
-				if (y + height * 1.2 < g->VisibleClipBounds.Height && !this->getRectangle(x, y + dy).IntersectsWith(obstacles[indexRec]->getRectangle())) {
-					y += dy;
-				}
-			}
-			else {
-				if (y + height * 1.2 < g->VisibleClipBounds.Height) {
-					y += dy;
-				}
+			if (y + height * 1.0 < g->VisibleClipBounds.Height) {
+				y += dy;
+				idy = 0;
 			}
 			break;
 		}
