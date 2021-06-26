@@ -23,7 +23,7 @@ namespace TrabajoFinal {
 			buffer = space->Allocate(g, panel1->ClientRectangle);
 
 			//Bitmaps
-			bmpMap = gcnew Bitmap("worldOne.jpg");
+			bmpMap = gcnew Bitmap("worldOne.png");
 			bmpLeader = gcnew Bitmap("leaderMale.png");
 			bmpAlly = gcnew Bitmap("allyOne.png");
 			bmpAgent = gcnew Bitmap("agent.png");
@@ -100,7 +100,7 @@ namespace TrabajoFinal {
 			// 
 			this->panel1->Location = System::Drawing::Point(1, 33);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(891, 632);
+			this->panel1->Size = System::Drawing::Size(1446, 731);
 			this->panel1->TabIndex = 0;
 			// 
 			// timer2
@@ -176,7 +176,7 @@ namespace TrabajoFinal {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(894, 667);
+			this->ClientSize = System::Drawing::Size(1453, 765);
 			this->Controls->Add(this->lblPoints);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->lblHp);
@@ -216,13 +216,13 @@ namespace TrabajoFinal {
 		switch (e->KeyCode)
 		{
 		case Keys::A: case Keys::Left:
-			controller->getLeader()->move(buffer->Graphics, 'A'); break;
+			controller->getLeader()->move(buffer->Graphics, 'A',controller->getObstacles()); break;
 		case Keys::D: case Keys::Right:
-			controller->getLeader()->move(buffer->Graphics, 'D'); break;
-		case Keys::W: case Keys::Up:
-			controller->getLeader()->move(buffer->Graphics, 'W'); break;
-		case Keys::S: case Keys::Down:
-			controller->getLeader()->move(buffer->Graphics, 'S'); break;
+			controller->getLeader()->move(buffer->Graphics, 'D',controller->getObstacles()); break;
+		case Keys::W: case Keys::Up:						   
+			controller->getLeader()->move(buffer->Graphics, 'W',controller->getObstacles()); break;
+		case Keys::S: case Keys::Down:						   
+			controller->getLeader()->move(buffer->Graphics, 'S',controller->getObstacles()); break;
 		case Keys::Space:
 			break;
 		default:

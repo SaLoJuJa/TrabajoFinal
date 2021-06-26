@@ -1,9 +1,21 @@
 ﻿  FrmMenu.cpp
-C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Character.h(33,56): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Character.h(33,42): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Character.h(35,56): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Character.h(35,42): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Leader.h(21,46): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Leader.h(21,32): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Leader.h(30,22): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Leader.h(51,22): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Leader.h(71,22): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Leader.h(92,22): warning C4018: '<': no coinciden signed/unsigned
   FrmPrincipal.cpp
-C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Character.h(33,56): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Character.h(33,42): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Character.h(35,56): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Character.h(35,42): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Leader.h(21,46): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Leader.h(21,32): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Leader.h(30,22): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Leader.h(51,22): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Leader.h(71,22): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\salo_\Desktop\TrabajoFinal\TrabajoFinal\Leader.h(92,22): warning C4018: '<': no coinciden signed/unsigned
   Generando código...
   FrmMenu.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   TrabajoFinal.vcxproj -> C:\Users\salo_\Desktop\TrabajoFinal\Debug\TrabajoFinal.exe

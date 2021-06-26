@@ -25,6 +25,22 @@ public:
 		for (int i = 0; i < nAgents; i++)
 			agent.push_back(new Agent(bmpAgent->Width / 3, bmpAgent->Height / 4, 0));
 
+		//paredes
+		obstacles.push_back(new Obstacle(135, 100, 15, 363));
+		obstacles.push_back(new Obstacle(153, 264, 675, 15));
+		obstacles.push_back(new Obstacle(828, 100, 15, 363));
+		obstacles.push_back(new Obstacle(154, 100, 117, 15));
+		obstacles.push_back(new Obstacle(423, 17, 15, 165));
+		obstacles.push_back(new Obstacle(610, 100, 15, 165));
+		obstacles.push_back(new Obstacle(152, 447, 185, 15));
+		obstacles.push_back(new Obstacle(422, 447, 220, 15));
+		obstacles.push_back(new Obstacle(323, 465, 15, 110));
+		obstacles.push_back(new Obstacle(625, 465, 15, 110));
+		//bordes del mapa
+		obstacles.push_back(new Obstacle(18, 15, 1048, 1));
+		obstacles.push_back(new Obstacle(15, 575, 1048, 1));
+		obstacles.push_back(new Obstacle(1065, 15, 1, 561));
+		obstacles.push_back(new Obstacle(18, 15, 1, 561));
 	}
 	~Controller(){}
 
@@ -57,10 +73,12 @@ public:
 	Leader* getLeader() { return leader; }
 	int getTime() { return time; }
 	void decreaseTime() { time--; }
+	vector<Obstacle*> getObstacles() { return obstacles; }
 
 private:
 	Leader* leader;
 	vector<Agent*> agent;
 	vector<Ally*> ally;
+	vector<Obstacle*> obstacles;
 	int time, nAgents, nAllys, nHabitants;
 };

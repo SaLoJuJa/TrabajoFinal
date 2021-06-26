@@ -10,6 +10,7 @@ public:
 		this->width = width;
 		this->height = height;
 		idx = idy = 0;
+		indexRec = -1;
 	}
 	~Character() {}
 
@@ -29,9 +30,11 @@ public:
 
 	void draw(Graphics^ g, Bitmap^ bmp)
 	{
+		Pen^ p = gcnew Pen(Color::Blue, 3);
 		Rectangle sectionShown = Rectangle(idx * width, idy * height, width, height);
 		Rectangle zoom = Rectangle(x, y, width * 1.2, height * 1.2);
 		g->DrawImage(bmp, zoom, sectionShown, GraphicsUnit::Pixel);
+		g->DrawRectangle(p, zoom);
 	}
 	virtual void move(){}
 
@@ -40,4 +43,5 @@ protected:
 	int dx, dy; //velocidad de movimiento
 	int width, height; //ancho y alto de figura
 	int idx, idy; //indice de las imagenes
+	int indexRec; //indice para remarcar la colision
 };
